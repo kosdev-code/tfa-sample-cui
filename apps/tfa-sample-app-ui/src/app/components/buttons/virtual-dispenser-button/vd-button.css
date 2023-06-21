@@ -1,0 +1,22 @@
+.ant-btn-circle {
+  width: 100px;
+  height: 100px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 0;
+}
+
+.ant-btn-primary:disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.vd-img {
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+}
+
+.img-unavailable {
+  filter: opacity(0.4);
+}
