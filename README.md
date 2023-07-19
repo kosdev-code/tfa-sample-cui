@@ -12,6 +12,19 @@ To start the development server run `nx serve tfa-sample-app-ui` or `npm run ser
 
 To run a build of the entire application including the UI and models run `npm run build`. This will create an optimized bundle in the `dist` folder at the root of the application.
 
+Alternatively, use the NX Console in VS Code to build one or more of the project components using the provided UI.
+
+- Navigate to the NX Console View
+- Select `build`
+- Select the project to build from the list
+
+There is a `kab` option as well that will run the build and produce a kab file that can be used during development as part of an image.
+
+The `kab` option is driven by a couple of environment variables that can be modified either in your environment or via a .env file at the root of the project:
+
+**JAVA_CMD** - the path to the java executable
+**KOS_INSTALL_PATH** - the kOS Studio installation directory. The `kabtool` will be found in this folder structure.
+
 ## Project Structure
 
 The kOS UI project has been configured as an integrated NX mono-repo that incorporates projects for both UI applications and the corresponding kOS models required to integrate with a dispenser running kOS.
