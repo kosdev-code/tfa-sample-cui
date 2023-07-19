@@ -18,12 +18,11 @@
     "@swc/helpers": "~0.5.0",
     "antd": "^4.24.10",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tslib": "^2.3.0"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "11.10.6",
-    "@kosdev-code/kos-nx-plugin": "snapshot",
+    "@kosdev-code/kos-nx-plugin": "0.1.0-89e2a318.1479",
     "@kosdev-code/kos-test-utils": "snapshot",
     "@nx/cypress": "16.3.2",
     "@nx/eslint-plugin": "16.3.2",
@@ -45,7 +44,9 @@
     "@vitejs/plugin-react": "^3.0.0",
     "@vitest/coverage-c8": "^0.31.0",
     "@vitest/ui": "^0.31.0",
+    "archiver": "^5.3.1",
     "cypress": "^12.11.0",
+    "dotenv-expand": "^10.0.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
@@ -67,5 +68,9 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-tsconfig-paths": "^4.0.2",
     "vitest": "^0.31.0"
+  },
+  "overrides": {
+    "esbuild": "^0.17.19",
+    "tslib": "^2.6.0"
   }
 }

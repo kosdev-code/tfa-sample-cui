@@ -1,0 +1,12 @@
+{
+  "migrations": [
+    {
+      "version": "0.0.9",
+      "description": "add-overrides",
+      "cli": "nx",
+      "implementation": "./src/migrations/add-overrides/add-overrides",
+      "package": "@kosdev-code/kos-nx-plugin",
+      "name": "add-overrides"
+    }
+  ]
+}

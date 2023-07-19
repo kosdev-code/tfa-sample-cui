@@ -35,46 +35,47 @@ The kOS UI project has been configured as an integrated NX mono-repo that incorp
 
 ## Generating models
 
-To generate a new kOS model into the model project use the `kosui` tool. Run the following command from the root of the project to generate a new model:
+To generate a new kOS model into the model project use the `kos nx plugin`. Run the following command from the root of the project to generate a new model:
 
 ```bash
-kosui model-nx --name "My Model"  --singleton true --services false --tests false --component true
+npx nx generate @kosdev-code/kos-nx-plugin:kos-model --name=sample-entity --components=false --dataServices=false --singleton=true --unitTests=false
 ```
 
 The command accepts a number of options:
 
 - `--name` - The name of the model
 - `--singleton` - Whether the model the model should only have one instance (default: false)
-- `--services` - Whether the model generate data services i.e. if the model will need to interact with the backend (default: true)
-- `--tests` - Whether the model should generate unit tests (default: true)
-- `--component` - Whether the model should generate model-specific hooks, higher order components (HoC) and contexts. (default: false)
+- `--dataServices` - Whether the model generate data services i.e. if the model will need to interact with the backend (default: true)
+- `--unitTests` - Whether the model should generate unit tests (default: true)
+- `--components` - Whether the model should generate model-specific hooks, higher order components (HoC) and contexts. (default: false)
 
-Alternatively, you can use the interactive mode to generate a model:
+Alternatively, use the NX Console in VS Code to create a model using the provided UI.
 
-```bash
-kosui model-nx
-```
-
-This will prompt you for the model name and the options.
+- Navigate to the NX Console View
+- Select `Generate`
+- Select `@kosdev-code/kos-nx-plugin - kos-model` from the list
+- Fill in the information in the provided form.
 
 ## Generating components
 
-To generate a new component that is designed to work with kOS models use the `kosui` tool. Run the following command to generate a new component:
+To generate a new component that is designed to work with kOS models use the `kos nx plugin` tool. Run the following command to generate a new component:
 
 ```bash
-kosui component --name my-component2 --useEmotionCss true
+npx nx generate @kosdev-code/kos-nx-plugin:kos-component --name=sample-component --type=components --useEmotionCss=false
 ```
 
 The command accepts a number of options:
 
 - `--name` - The name of the component
+- `--type` - The type of the component (feature/component). Determines the folder in the project where the component will be created
 - `--useEmotionCss` - Whether the component should use the CSS-In-JS Emotion css library. (default: true)
 
-Alternatively, you can use the interactive mode to generate a component:
+Alternatively, use the NX Console in VS Code to create a model using the provided UI.
 
-```bash
-kosui component
-```
+- Navigate to the NX Console View
+- Select `Generate`
+- Select `@kosdev-code/kos-nx-plugin - kos-component` from the list
+- Fill in the information in the provided form.
 
 ## Running tasks
 

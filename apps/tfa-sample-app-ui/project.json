@@ -4,9 +4,32 @@
   "sourceRoot": "apps/tfa-sample-app-ui/src",
   "projectType": "application",
   "targets": {
+    "kab": {
+      "command": "node tools/scripts/kabtool.mjs build tfa-sample-app-ui && node tools/scripts/kabtool.mjs list tfa-sample-app-ui",
+      "options": {
+        "outputPath": "dist/archives/packages/tfa-sample-app-ui/",
+        "zipName": "ui.zip",
+        "kabName": "tfa-sample-app-ui.kab"
+      },
+      "dependsOn": [
+        "zip"
+      ]
+    },
+    "zip": {
+      "command": "node tools/scripts/archiver.js tfa-sample-app-ui",
+      "options": {
+        "outputPath": "dist/archives/packages/tfa-sample-app-ui/",
+        "zipName": "ui.zip"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
     "build": {
       "executor": "@nx/vite:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/apps/tfa-sample-app-ui"
@@ -54,7 +77,9 @@
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/tfa-sample-app-ui"],
+      "outputs": [
+        "coverage/apps/tfa-sample-app-ui"
+      ],
       "options": {
         "passWithNoTests": true,
         "reportsDirectory": "../../coverage/apps/tfa-sample-app-ui"
@@ -62,9 +87,13 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/tfa-sample-app-ui/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/tfa-sample-app-ui/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "serve-static": {
